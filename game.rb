@@ -1,4 +1,5 @@
 class Game
+  attr_reader :letters, :good_letters, :bad_letters, :status, :errors
   def initialize(input_word)
     @letters = get_letters(input_word)
 
@@ -11,10 +12,6 @@ class Game
   end
 
   def get_letters(input_word)
-    if input_word == nil || input_word == ""
-      abort "get you word"
-    end
-
     return input_word.upcase.split("")
   end
 
@@ -54,25 +51,5 @@ class Game
         @status = -1
       end
     end
-  end
-
-  def letters
-    return @letters
-  end
-
-  def good_letters
-    return @good_letters
-  end
-
-  def bad_letters
-    return @bad_letters
-  end
-
-  def status
-    @status
-  end
-
-  def errors
-    @errors
   end
 end
